@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<schemalist>
+
+  <schema path="/com/github/edhinrichsen/glyph/" id="com.github.edhinrichsen.glyph">
+
+    <key name='x-pos' type='i'>
+        <default>360</default>
+        <summary>Horizontal Position</summary>
+    </key>
+    <key name='y-pos' type='i'>
+         <default>360</default>
+         <summary>Vertical Position</summary>
+    </key>
+
+    <key name='window-width' type='i'>
+         <default>600</default>
+         <summary>Window Width</summary>
+    </key>
+    <key name='window-height' type='i'>
+         <default>400</default>
+         <summary>Window Height</summary>
+    </key>
+
+  </schema>
+
+</schemalist>
