@@ -206,7 +206,7 @@ protected class StyleButtonHeader : Gtk.Grid {
 
         attach (label_button,0,0);
 
-        label_button.clicked.connect (()=> {Notebook.get_book().format_open_doc("formatblock",tag);});
+        label_button.clicked.connect (()=> {Notebook.get_book().format_box("glyph-"+tag, null);});
     }
 
 }
@@ -364,8 +364,8 @@ protected class dot_points : Gtk.Grid{
         grid.attach(numbered,0,0);
         grid.attach(bulleted,1,0);
 
-        numbered.clicked.connect (()=> {Notebook.get_book().format_open_doc("insertunorderedlist"); });
-        bulleted.clicked.connect (()=> {Notebook.get_book().format_open_doc("insertorderedlist"); });
+        numbered.clicked.connect (()=> {Notebook.get_book().format_box(null, "glyph-ul"); });
+        bulleted.clicked.connect (()=> {Notebook.get_book().format_box(null, "glyph-block"); });
 
         grid.get_style_context ().add_class ("linked");
         grid.margin = 4;

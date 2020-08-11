@@ -11,13 +11,28 @@ public class Notebook : Granite.Widgets.DynamicNotebook {
     }
 
     public void format_open_doc(string arg1, string? arg2 = null) {
-    if (arg2 == null){
-        ((Doc)current.page).run_javascript("formatDoc('"+arg1+"')");
-    } else {
-        ((Doc)current.page).run_javascript("formatDoc('"+arg1+"','"+arg2+"')");
+        if (arg2 == null){
+            ((Doc)current.page).run_javascript("formatDoc('"+arg1+"')");
+        } else {
+            ((Doc)current.page).run_javascript("formatDoc('"+arg1+"','"+arg2+"')");
+        }
     }
 
+    public void format_box(string? styleClass = null, string? displayClass = null){
+        //  ((Doc)current.page).run_javascript("formatBox('"+arg1+"','"+arg2+"')");
+        if (styleClass != null){
+            ((Doc)current.page).run_javascript("setStyle('"+styleClass+"')");
+        }
 
+        if (displayClass != null) {
+            ((Doc)current.page).run_javascript("setDisplay('"+displayClass+"')");
+        }
+        
+        //  stdout.printf ("formatBox('"+style+"')");
+    }
+
+    public void format_line(string style){
+        ((Doc)current.page).run_javascript("formatBox('"+style+"')");
     }
 
     public void new_welcome_page(){

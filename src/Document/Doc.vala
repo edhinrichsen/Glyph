@@ -1,6 +1,6 @@
 
 public class Doc : Gtk.Box {
-    public string data = "";
+    public string data = "<h1>&nbsp;</h1>";
     public string save_data;
     public string stylesheet = "";
     public WebKit.WebView view {get; construct;}
@@ -33,7 +33,7 @@ public class Doc : Gtk.Box {
     public void load(File file){
         // A reference to our file
         //var file = File.new_for_path ("../css/data.xml");
-
+        data = "";
         if (!file.query_exists ()) {
             stderr.printf ("File '%s' doesn't exist.\n", file.get_path ());
         }
